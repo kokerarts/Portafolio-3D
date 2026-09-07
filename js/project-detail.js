@@ -10,7 +10,21 @@ function renderNotFound(container) {
   `;
 }
 
+function renderHeroMedia(project) {
+  if (project.media) {
+    return `<img src="${project.media}" alt="${project.title}" loading="lazy">`;
+  }
+  return placeholderIcon(project.category);
+}
+
 function renderGallery(project) {
+  /* Si el proyecto define "gallery" (arreglo de rutas a imágenes o .gif),
+     se muestran esas imágenes. Si no, se generan paneles decorativos. */
+  if (project.gallery && project.gallery.length) {
+    return project.gallery
+      .map((src) => `<div class="gallery-item"><img src="${src}" alt="${project.title}" loading="lazy"></div>`)
+      .join('');
+  }
   const count = project.galleryCount || 3;
   let html = '';
   for (let i = 0; i < count; i++) {
@@ -44,6 +58,9 @@ function renderProject(container, project) {
   const metaHtml = metaParts.map((part) => `<span>${part}</span>`).join('');
   const paragraphs = project.longDescription.map((p) => `<p>${p}</p>`).join('');
   const toolTags = project.tools.map((t) => `<span class="tool-badge">${t}</span>`).join('');
+  const pdfLink = project.pdf
+    ? `<a href="${project.pdf}" target="_blank" rel="noopener" class="timeline-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3v5h5"/><path d="M17 21H7a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h7l5 5v11a2 2 0 0 1-2 2z"/></svg>Ver PDF</a>`
+    : '';
 
   container.innerHTML = `
     <a href="index.html#${sectionAnchor}" class="back-link">&larr; Volver al portafolio</a>
@@ -54,13 +71,14 @@ function renderProject(container, project) {
       <div class="project-meta">${metaHtml}</div>
     </header>
 
-    <div class="project-media-hero">${placeholderIcon(project.category)}</div>
+    <div class="project-media-hero">${renderHeroMedia(project)}</div>
 
     <div class="project-body">
       <div class="project-description">${paragraphs}</div>
       <aside class="project-tools">
         <h3>Herramientas usadas</h3>
         <div class="tools-list">${toolTags}</div>
+        ${pdfLink ? `<div class="project-pdf-link">${pdfLink}</div>` : ''}
       </aside>
     </div>
 

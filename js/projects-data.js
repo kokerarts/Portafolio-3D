@@ -9,7 +9,13 @@
    - shortDescription:  texto que aparece al pasar el cursor sobre la tarjeta
    - longDescription:   arreglo de párrafos para la página de detalle
    - tools:             lista de programas/herramientas usadas
-   - galleryCount:      cuántos espacios de imagen mostrar en la galería (por defecto 3) */
+   - galleryCount:      cuántos espacios decorativos mostrar en la galería si no hay imágenes (por defecto 3)
+   - media:             (opcional) ruta a una imagen o .gif para la tarjeta y la imagen principal del detalle,
+                         ej. "assets/images/juego-01.gif". Si no se define, se muestra un ícono decorativo.
+   - gallery:            (opcional) arreglo de rutas a imágenes o .gif para la galería del detalle,
+                         ej. ["assets/images/juego-01-01.jpg", "assets/images/juego-01-02.gif"]
+   - pdf:                (opcional) ruta a un PDF relacionado (ej. un breakdown técnico), se
+                         muestra como enlace "Ver PDF" en la página de detalle, ej. "assets/documents/juego-01-breakdown.pdf" */
 
 const PROJECTS = [
   {
@@ -26,6 +32,9 @@ const PROJECTS = [
     ],
     tools: ['ZBrush', 'Blender', 'Substance Painter'],
     galleryCount: 3
+    // Ejemplo de cómo agregar tus propias imágenes/gifs (descomenta y ajusta las rutas):
+    // media: 'assets/images/juego-01.gif',
+    // gallery: ['assets/images/juego-01-01.jpg', 'assets/images/juego-01-02.gif', 'assets/images/juego-01-03.jpg']
   },
   {
     id: 'juego-02',

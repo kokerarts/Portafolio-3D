@@ -1,18 +1,22 @@
 /* main.js — lógica específica de index.html */
 
 function createProjectCard(project, index) {
-  const tones = ['tone-a', 'tone-b', 'tone-c', 'tone-d'];
-  const tone = tones[index % tones.length];
   const tagLabel = project.category === 'trabajo' ? 'Trabajo' : 'Videojuego';
 
   const card = document.createElement('a');
   card.href = `project.html?id=${encodeURIComponent(project.id)}`;
   card.className = 'project-card';
 
+  /* Si el proyecto define "media" (ruta a una imagen o .gif), se usa esa
+     imagen en la tarjeta. Si no, se muestra el ícono decorativo. */
+  const mediaContent = project.media
+    ? `<img src="${project.media}" alt="${project.title}" loading="lazy">`
+    : placeholderIcon(project.category);
+
   card.innerHTML = `
-    <div class="card-media ${tone}">
+    <div class="card-media">
       <span class="tag-pill card-tag">${tagLabel}</span>
-      ${placeholderIcon(project.category)}
+      ${mediaContent}
     </div>
     <div class="card-reveal">
       <div class="card-reveal-inner">
