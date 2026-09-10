@@ -101,6 +101,4 @@ document.addEventListener('DOMContentLoaded', () => {
   } else {
     renderProject(container, project);
   }
-
-  setupNav();
 });

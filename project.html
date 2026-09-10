@@ -27,34 +27,22 @@
     <span class="dot dot-4"></span>
     <span class="dot ring dot-5"></span>
     <span class="dot dot-6"></span>
+    <span class="dot dot-7"></span>
+    <span class="dot dot-8"></span>
+    <span class="dot ring dot-9"></span>
   </div>
 
-  <header class="navbar" id="navbar">
-    <div class="nav-inner">
-      <a href="index.html#inicio" class="nav-logo">TN<span class="dot">.</span></a>
-      <nav class="nav-links" id="navLinks">
-        <a href="index.html#inicio">Inicio</a>
-        <a href="index.html#videojuegos">Videojuegos</a>
-        <a href="index.html#trabajos">Trabajos</a>
-        <a href="index.html#experiencia">Experiencia</a>
-        <a href="index.html#sobre-mi">Sobre mí</a>
-        <a href="index.html#contacto" class="nav-cta">Contacto</a>
-      </nav>
-      <button class="nav-toggle" id="navToggle" aria-label="Abrir menú" aria-expanded="false">
-        <span></span><span></span><span></span>
-      </button>
-    </div>
-  </header>
+  <!-- Logo fijo: el mismo en todas las páginas, para volver siempre al inicio -->
+  <a href="index.html" class="site-logo" aria-label="Volver al inicio del portafolio">
+    <img src="assets/images/logo.png" alt="Logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+    <span class="logo-fallback">LOGO</span>
+  </a>
 
   <main class="project-detail" id="projectDetail">
     <noscript>
       <p style="color:var(--text-secondary)">Este sitio necesita JavaScript habilitado para mostrar los detalles del proyecto.</p>
     </noscript>
   </main>
-
-  <footer class="footer">
-    <p>© 2026 [Tu Nombre] — Portafolio 3D</p>
-  </footer>
 
   <script src="js/common.js"></script>
   <script src="js/projects-data.js"></script>

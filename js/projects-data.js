@@ -8,7 +8,8 @@
    - engine:            motor o software principal (opcional, deja "" si no aplica)
    - shortDescription:  texto que aparece al pasar el cursor sobre la tarjeta
    - longDescription:   arreglo de párrafos para la página de detalle
-   - tools:             lista de programas/herramientas usadas
+   - tools:             lista de programas/herramientas usadas — también funciona como filtro "Herramientas"
+   - tags:               lista de tipos de trabajo (ej. 'Modelado', 'Animación', 'Rigging', 'Texturizado') — funciona como filtro "Tipos"
    - galleryCount:      cuántos espacios decorativos mostrar en la galería si no hay imágenes (por defecto 3)
    - media:             (opcional) ruta a una imagen o .gif para la tarjeta y la imagen principal del detalle,
                          ej. "assets/images/juego-01.gif". Si no se define, se muestra un ícono decorativo.
@@ -31,6 +32,7 @@ const PROJECTS = [
       'Describe tu proceso: desde la referencia o el concepto inicial, pasando por el sculpt y la retopología, hasta el resultado final integrado en el motor de juego.'
     ],
     tools: ['ZBrush', 'Blender', 'Substance Painter'],
+    tags: ['Modelado', 'Escultura'],
     galleryCount: 3
     // Ejemplo de cómo agregar tus propias imágenes/gifs (descomenta y ajusta las rutas):
     // media: 'assets/images/juego-01.gif',
@@ -49,6 +51,7 @@ const PROJECTS = [
       'Menciona algún reto técnico o creativo que resolviste durante el desarrollo, y cómo lo abordaste.'
     ],
     tools: ['Maya', 'Substance Designer', 'Unity'],
+    tags: ['Modelado', 'Texturizado'],
     galleryCount: 3
   },
   {
@@ -64,6 +67,7 @@ const PROJECTS = [
       'Agrega detalles sobre las herramientas o técnicas específicas que utilizaste, como bakes, sets de texturas o presupuestos de polígonos.'
     ],
     tools: ['Blender', 'Substance Painter', 'Marmoset Toolbag'],
+    tags: ['Modelado', 'Rigging'],
     galleryCount: 3
   },
   {
@@ -79,6 +83,7 @@ const PROJECTS = [
       'Otro párrafo sobre el resultado final o algo que aprendiste durante el proceso.'
     ],
     tools: ['ZBrush', 'Maya'],
+    tags: ['Animación', 'Rigging'],
     galleryCount: 3
   },
   {
@@ -94,6 +99,7 @@ const PROJECTS = [
       'Explica tu flujo de trabajo, del boceto o referencia al render final.'
     ],
     tools: ['Blender', 'Substance Painter'],
+    tags: ['Escultura', 'Texturizado'],
     galleryCount: 3
   },
   {
@@ -109,6 +115,7 @@ const PROJECTS = [
       'Comenta cualquier restricción creativa o técnica que hiciera especial este proyecto.'
     ],
     tools: ['ZBrush', 'Maya', 'Substance Painter'],
+    tags: ['Modelado', 'Animación'],
     galleryCount: 3
   },
   {
@@ -124,6 +131,7 @@ const PROJECTS = [
       'Otro párrafo sobre las herramientas o el enfoque que usaste para resolverlo.'
     ],
     tools: ['Cinema 4D', 'Photoshop'],
+    tags: ['Texturizado', 'Iluminación'],
     galleryCount: 3
   },
   {
@@ -139,6 +147,7 @@ const PROJECTS = [
       'Agrega cualquier detalle adicional que quieras destacar.'
     ],
     tools: ['Blender', 'Marvelous Designer'],
+    tags: ['Modelado', 'Escultura'],
     galleryCount: 3
   }
 ];

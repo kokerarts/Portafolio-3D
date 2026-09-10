@@ -27,24 +27,17 @@
     <span class="dot dot-4"></span>
     <span class="dot ring dot-5"></span>
     <span class="dot dot-6"></span>
+    <span class="dot dot-7"></span>
+    <span class="dot dot-8"></span>
+    <span class="dot ring dot-9"></span>
   </div>
 
-  <header class="navbar" id="navbar">
-    <div class="nav-inner">
-      <a href="#inicio" class="nav-logo">TN<span class="dot">.</span></a>
-      <nav class="nav-links" id="navLinks">
-        <a href="#inicio">Inicio</a>
-        <a href="#videojuegos">Videojuegos</a>
-        <a href="#trabajos">Trabajos</a>
-        <a href="#experiencia">Experiencia</a>
-        <a href="#sobre-mi">Sobre mí</a>
-        <a href="#contacto" class="nav-cta">Contacto</a>
-      </nav>
-      <button class="nav-toggle" id="navToggle" aria-label="Abrir menú" aria-expanded="false">
-        <span></span><span></span><span></span>
-      </button>
-    </div>
-  </header>
+  <!-- Logo fijo: reemplaza el href="assets/images/logo.png" cuando tengas tu archivo.
+       Mientras no exista, se muestra un marcador de posición automáticamente. -->
+  <a href="index.html" class="site-logo" aria-label="Volver al inicio del portafolio">
+    <img src="assets/images/logo.png" alt="Logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+    <span class="logo-fallback">LOGO</span>
+  </a>
 
   <main>
     <section class="hero" id="inicio">
@@ -64,7 +57,6 @@
           <div class="hero-actions">
             <a href="#videojuegos" class="btn btn-primary">Ver proyectos</a>
             <a href="#contacto" class="btn btn-ghost">Contáctame</a>
-            <a href="assets/documents/cv.pdf" target="_blank" rel="noopener" class="btn btn-ghost">Descargar CV</a>
           </div>
         </div>
         <div class="hero-photo">
@@ -94,6 +86,27 @@
       </div>
     </section>
 
+    <section class="filters-section" id="filtros">
+      <button type="button" class="filters-toggle" id="filtersToggle" aria-expanded="false" aria-controls="filtersCollapse">
+        Filtrar por: <span class="filters-toggle-icon">+</span>
+      </button>
+      <div class="filters-collapse" id="filtersCollapse">
+        <div class="filters-collapse-inner">
+          <div class="filters-bar">
+            <div class="filter-group">
+              <span class="filter-label">Herramientas</span>
+              <div class="filter-buttons" id="toolFilters"></div>
+            </div>
+            <div class="filter-group">
+              <span class="filter-label">Tipos</span>
+              <div class="filter-buttons" id="tagFilters"></div>
+            </div>
+            <button type="button" class="filter-clear" id="filterClear">Limpiar filtros</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section class="projects-section" id="trabajos">
       <div class="section-head">
         <h2>Trabajos específicos</h2>
@@ -105,6 +118,10 @@
     </section>
 
     <section class="experience-section" id="experiencia">
+      <div class="exp-facets" aria-hidden="true">
+        <span class="facet ef1"></span>
+        <span class="facet ef2"></span>
+      </div>
       <div class="section-head">
         <h2>Experiencia</h2>
       </div>
@@ -173,15 +190,15 @@
         <div class="tools-block">
           <h3>Herramientas</h3>
           <div class="tools-list">
-            <span class="tool-badge">Blender</span>
-            <span class="tool-badge">ZBrush</span>
-            <span class="tool-badge">Maya</span>
-            <span class="tool-badge">Substance Painter</span>
-            <span class="tool-badge">Substance Designer</span>
-            <span class="tool-badge">Unreal Engine</span>
-            <span class="tool-badge">Unity</span>
-            <span class="tool-badge">Photoshop</span>
-            <span class="tool-badge">Marvelous Designer</span>
+            <button type="button" class="tool-badge" data-filter-tool="Blender">Blender</button>
+            <button type="button" class="tool-badge" data-filter-tool="ZBrush">ZBrush</button>
+            <button type="button" class="tool-badge" data-filter-tool="Maya">Maya</button>
+            <button type="button" class="tool-badge" data-filter-tool="Substance Painter">Substance Painter</button>
+            <button type="button" class="tool-badge" data-filter-tool="Substance Designer">Substance Designer</button>
+            <button type="button" class="tool-badge" data-filter-tool="Unreal Engine">Unreal Engine</button>
+            <button type="button" class="tool-badge" data-filter-tool="Unity">Unity</button>
+            <button type="button" class="tool-badge" data-filter-tool="Photoshop">Photoshop</button>
+            <button type="button" class="tool-badge" data-filter-tool="Marvelous Designer">Marvelous Designer</button>
           </div>
         </div>
         <div class="contact-block" id="contacto">
@@ -208,10 +225,6 @@
       </div>
     </section>
   </main>
-
-  <footer class="footer">
-    <p>© 2026 [Tu Nombre] — Portafolio 3D</p>
-  </footer>
 
   <script src="js/common.js"></script>
   <script src="js/projects-data.js"></script>

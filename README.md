@@ -26,12 +26,16 @@ No necesita instalación. Abre `index.html` directamente en tu navegador, o usa 
 ## Cómo personalizarlo
 
 1. **Datos personales**: edita `index.html` — busca los textos entre corchetes como `[Tu Nombre Completo]` o `[Tu rol profesional]` y reemplázalos.
-2. **Foto**: coloca tu imagen en `assets/images/` y sigue el comentario dentro de `.hero-photo` en `index.html` para reemplazar el marcador por tu `<img>`.
-3. **Proyectos**: todo se controla desde `js/projects-data.js`. Cada objeto del arreglo `PROJECTS` es una tarjeta. Copia uno, cámbiale el `id` (único, sin espacios) y edita sus datos. `category` debe ser `"videojuego"` o `"trabajo"`.
-4. **Imágenes de proyectos**: por defecto, las tarjetas y galerías usan paneles decorativos en vez de fotos, para que el sitio funcione sin necesidad de subir nada primero. Cuando tengas tus imágenes, reemplaza esos paneles por `<img>` dentro de `js/main.js` (tarjetas) y `js/project-detail.js` (galería e imagen principal).
-5. **Experiencia, herramientas y contacto**: edita directamente esas secciones en `index.html`. Para enlazar un diploma o certificado a un puesto/curso, envuelve su título en una etiqueta `<a>` apuntando a un PDF en `assets/documents/` (hay un ejemplo ya armado en la experiencia estudiantil, y más detalles en `assets/documents/README.md`).
-6. **CV y PDFs**: coloca tu currículum como `assets/documents/cv.pdf` para que funcione el botón "Descargar CV" del inicio. También puedes agregar un PDF a cualquier proyecto con el campo `pdf` en `js/projects-data.js`.
-7. **Colores**: todos los colores están centralizados como variables al inicio de `css/style.css` (bloque `:root`), así puedes ajustar el tono exacto de verdes y negros desde un solo lugar.
+2. **Logo**: coloca tu archivo como `assets/images/logo.png`. Aparece automáticamente en el botón fijo de la esquina superior izquierda (que funciona como "volver al inicio" en todas las páginas); mientras no exista el archivo, se ve un marcador de posición.
+3. **Foto**: coloca tu imagen en `assets/images/` y sigue el comentario dentro de `.hero-photo` en `index.html` para reemplazar el marcador por tu `<img>`.
+4. **Proyectos**: todo se controla desde `js/projects-data.js`. Cada objeto del arreglo `PROJECTS` es una tarjeta. Copia uno, cámbiale el `id` (único, sin espacios) y edita sus datos. `category` debe ser `"videojuego"` o `"trabajo"`. Los campos `tools` y `tags` alimentan automáticamente los filtros de "Herramientas" y "Tipos" de la página principal.
+5. **Filtros**: no necesitas configurarlos aparte — se generan solos a partir de los valores usados en `tools` y `tags` de tus proyectos. Los botones de herramientas en "Sobre mí" también filtran: su texto debe coincidir exactamente con el nombre usado en `tools` para que funcionen.
+6. **Imágenes de proyectos**: por defecto, las tarjetas y galerías usan paneles decorativos en vez de fotos, para que el sitio funcione sin necesidad de subir nada primero. Cuando tengas tus imágenes, reemplaza esos paneles por `<img>` dentro de `js/main.js` (tarjetas) y `js/project-detail.js` (galería e imagen principal).
+7. **Experiencia y contacto**: edita directamente esas secciones en `index.html`. Para enlazar un diploma o certificado a un puesto/curso, envuelve su título en una etiqueta `<a>` apuntando a un PDF en `assets/documents/` (hay un ejemplo ya armado en la experiencia estudiantil, y más detalles en `assets/documents/README.md`).
+8. **PDFs**: coloca tu currículum u otros documentos en `assets/documents/`. También puedes agregar un PDF a cualquier proyecto con el campo `pdf` en `js/projects-data.js`.
+9. **Colores**: todos los colores están centralizados como variables al inicio de `css/style.css` (bloque `:root`), así puedes ajustar el tono exacto de verdes y negros desde un solo lugar.
+
+**Nota**: este portafolio no tiene un menú de navegación superior — la única navegación fija es el logo, que siempre lleva de vuelta al inicio.
 
 ## Cómo subirlo a GitHub
 
