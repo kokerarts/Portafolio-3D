@@ -20,96 +20,48 @@
 
 const PROJECTS = [
   {
-    id: 'juego-01',
+    id: 'V-HellBreezer',
     category: 'videojuego',
-    title: '[Nombre del Videojuego 1]',
-    role: '[Tu rol, ej. Artista 3D de Personajes]',
-    year: '2024',
-    engine: '[Motor usado, ej. Unreal Engine 5]',
-    shortDescription: 'Escribe aquí una mini descripción de 1-2 líneas para la vista previa de la tarjeta.',
+    title: '[Hell Breezer]',
+    role: '[Artista y animador]',
+    year: '2022 - Actualidad',
+    engine: '[Unity]',
+    shortDescription: 'Hell Breezer es un videojuego Hack n Slash plataformero dinamico en 2D con un estilo visual que se asemeja a las animaciones de internet de los 00s',
     longDescription: [
-      'Cuenta el contexto del proyecto: qué tipo de juego es, con quién trabajaste y cuál fue tu rol específico dentro del equipo.',
-      'Describe tu proceso: desde la referencia o el concepto inicial, pasando por el sculpt y la retopología, hasta el resultado final integrado en el motor de juego.'
+      'Breezer es un oso nacido en Antrozoo que se entrenó toda su vida en las artes marciales para convertirse en el protector de su nación. Lastimosamente, el titulo de su vida seria entregado a su compañero y mejor amigo Straker. Enfurecido por la traición de su pueblo, Breezer decide convertirse en el mas fuerte del mundo para demostrar su valor; es ahí donde conoce a Radna, un demonio milenario que le promete poder a cambio de absorber las almas de los protectores de las diferentes naciones. Es entonces que Breezer, toma rumbo a las 5 naciones de las 5 razas para cumplir su venganza, pasando por un viaje de lucha, autodescubrimiento, ira, sociedad, y entidades cosmicas que quieren evitar una segunda catastrofe demoniaca...',
+      'Hell Breezer fue el primer videojuego que realicé en mi carrera, por lo que está lleno de experimentos de aprendizaje. Tome el rol de "director" para fijar un rumbo en nuestro equipo de trabajo; seguidamente, trabajé como artista y animador 2D en un par de sprites, me encargé de el coloreado y exportado de algunos otros, y realicé un par de escenarios con props 3D como prueba de diseño. Adicionalmente, tuve la oportunidad de realizar un cortometraje usando de base el mundo de Hell Breezer, dicho metraje cuenta la historia de los enemigos basicos encontrandose contra el oso iracundo por primera vez; me encargue de hacer modelos, huesos, y animaciones en Blender, como tambien cinematografia, luces, camaras y VFX en "Sequencer" de Unreal Engine; incluso ¡fuí quien guionizó todo el cortometraje! Algunos de estos trabajos estan visibles en este portafolio por si gustan mirar.'
     ],
-    tools: ['ZBrush', 'Blender', 'Substance Painter'],
-    tags: ['Modelado', 'Escultura'],
-    galleryCount: 3
+    tools: ['Unity', 'Blender', 'Unreal Engine'],
+    tags: ['Modelado', 'Animacion', 'Rigging', 'Cinematografia'],
+    galleryCount: 3,
     // Ejemplo de cómo agregar tus propias imágenes/gifs (descomenta y ajusta las rutas):
-    // media: 'assets/images/juego-01.gif',
+    media: 'assets/images/HellBreezer.PNG',
     // gallery: ['assets/images/juego-01-01.jpg', 'assets/images/juego-01-02.gif', 'assets/images/juego-01-03.jpg']
   },
   {
-    id: 'juego-02',
-    category: 'videojuego',
-    title: '[Nombre del Videojuego 2]',
-    role: '[Tu rol, ej. Artista de Entornos]',
-    year: '2023',
-    engine: '[Motor usado, ej. Unity]',
-    shortDescription: 'Mini descripción para la vista previa de esta tarjeta.',
-    longDescription: [
-      'Describe el proyecto: género del juego, plataforma y el alcance de tu participación.',
-      'Menciona algún reto técnico o creativo que resolviste durante el desarrollo, y cómo lo abordaste.'
-    ],
-    tools: ['Maya', 'Substance Designer', 'Unity'],
-    tags: ['Modelado', 'Texturizado'],
-    galleryCount: 3
-  },
-  {
-    id: 'juego-03',
-    category: 'videojuego',
-    title: '[Nombre del Videojuego 3]',
-    role: '[Tu rol, ej. Modelador de Props]',
-    year: '2022',
-    engine: '[Motor usado]',
-    shortDescription: 'Mini descripción para la vista previa de esta tarjeta.',
-    longDescription: [
-      'Explica brevemente el proyecto y el equipo con el que colaboraste.',
-      'Agrega detalles sobre las herramientas o técnicas específicas que utilizaste, como bakes, sets de texturas o presupuestos de polígonos.'
-    ],
-    tools: ['Blender', 'Substance Painter', 'Marmoset Toolbag'],
-    tags: ['Modelado', 'Rigging'],
-    galleryCount: 3
-  },
-  {
-    id: 'juego-04',
-    category: 'videojuego',
-    title: '[Nombre del Videojuego 4]',
-    role: '[Tu rol]',
-    year: '2021',
-    engine: '[Motor usado]',
-    shortDescription: 'Mini descripción para la vista previa de esta tarjeta.',
-    longDescription: [
-      'Un párrafo sobre este proyecto y tu contribución principal.',
-      'Otro párrafo sobre el resultado final o algo que aprendiste durante el proceso.'
-    ],
-    tools: ['ZBrush', 'Maya'],
-    tags: ['Animación', 'Rigging'],
-    galleryCount: 3
-  },
-  {
-    id: 'trabajo-01',
+    id: 'P-GolemDePiedra',
     category: 'trabajo',
-    title: '[Nombre del Trabajo 1]',
-    role: '[Tipo de proyecto, ej. Proyecto personal]',
-    year: '2024',
+    title: '[Golem de piedra]',
+    role: '[Modelador; animador; rigging]',
+    year: '2025',
     engine: '',
-    shortDescription: 'Mini descripción para la vista previa de esta tarjeta.',
+    shortDescription: 'Golem de piedra de Hell Breezer utilizado en el corto cinematografico.',
     longDescription: [
-      'Describe qué es esta pieza: personaje original, prop, ambiente, etc., y qué te motivó a crearla.',
-      'Explica tu flujo de trabajo, del boceto o referencia al render final.'
+      'Este golem fue el primer "humanoide" que creé en mi carrera, para ser la primera vez, estoy muy satisfecho con su resultado, lo he llegado a utilizar en varias ocaciones como place holder, y en el corto cinematografico de Hell Breezer.',
+      'Su hueso esta compuesto por el rig default de mixamo (a petición del profesor), y sus primeras animaciones son meh. Mas adelante, experimenté con animaciones mas caricaturescas, que escalaban ciertas partes del cuerpo para dar una sensación de "squash and stretch", solamente limitado por los huesos de mixamo.'
     ],
-    tools: ['Blender', 'Substance Painter'],
-    tags: ['Escultura', 'Texturizado'],
+    tools: ['Blender'],
+    tags: ['Modelado', 'Animación'],
     galleryCount: 3
   },
   {
-    id: 'trabajo-02',
+    id: 'P-CinematicaHellBreezer',
     category: 'trabajo',
-    title: '[Nombre del Trabajo 2]',
-    role: '[Tipo de proyecto, ej. Encargo freelance]',
-    year: '2023',
-    engine: '',
-    shortDescription: 'Mini descripción para la vista previa de esta tarjeta.',
+    title: '[Cortometraje de Hell Breezer]',
+    role: '[Cinematografía; Guionista; Director; Animador; ]',
+    year: '2025',
+    engine: 'Unreal Engine',
+    shortDescription: 'Corto animado desde el punto de vista de los enemigos basicos de Hell Breezer.',
     longDescription: [
       'Describe el encargo: para quién fue, qué pedían y cómo lo resolviste.',
       'Comenta cualquier restricción creativa o técnica que hiciera especial este proyecto.'
