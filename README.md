@@ -1,6 +1,6 @@
-# Portafolio 3D — [Tu Nombre]
+# Portafolio 3D — Benjamín Sotelo Villalobos
 
-Portafolio web enfocado en proyectos 3D (videojuegos y trabajos específicos), con estética **Frutiger Metro** (vidrio, brillos y colores fríos) sobre fondo negro. Sin frameworks ni build: HTML, CSS y JavaScript puros.
+Portafolio web enfocado en proyectos 3D (videojuegos y trabajos específicos), con estética **Frutiger Metro** (siluetas y sombras negras duras, halftones y remolinos vectoriales) en paleta monocromática de verdes. Sin frameworks ni build: HTML, CSS y JavaScript puros.
 
 ## Estructura del proyecto
 
@@ -11,49 +11,56 @@ portfolio-3d/
 ├── css/
 │   └── style.css             → Todos los estilos (colores editables al inicio del archivo)
 ├── js/
-│   ├── common.js              → Navegación, menú móvil y animación de encabezados
+│   ├── common.js              → Funciones compartidas (tarjetas, íconos, scroll)
 │   ├── projects-data.js       → Aquí editas tus proyectos
-│   ├── main.js                 → Lógica de index.html
-│   └── project-detail.js       → Lógica de project.html
-├── assets/images/             → Coloca aquí tus fotos e imágenes
+│   ├── main.js                 → Lógica de index.html (filtros, tarjetas)
+│   └── project-detail.js       → Lógica de project.html (galería, lightbox, relacionados)
+├── assets/
+│   ├── images/                 → Fotos, logo, imágenes y gifs/webp de proyectos
+│   └── documents/               → PDFs (diplomas, CV, breakdowns)
 └── README.md
 ```
 
 ## Cómo verlo en tu computadora
 
-No necesita instalación. Abre `index.html` directamente en tu navegador, o usa la extensión **Live Server** de VS Code (clic derecho sobre `index.html` → "Open with Live Server") para recarga automática mientras editas.
+Abre `index.html` directamente en tu navegador, o usa la extensión **Live Server** de VS Code (clic derecho sobre `index.html` → "Open with Live Server").
+
+## Funciones del portafolio
+
+- **Logo fijo**: esquina superior izquierda, siempre visible, lleva de vuelta al inicio. Coloca tu archivo en `assets/images/logo.png`.
+- **Videojuegos y Trabajos específicos**: tarjetas con vista previa al pasar el cursor. Se editan en `js/projects-data.js`.
+- **Filtros** (solo afectan a "Trabajos específicos"): por Herramientas y Tipos, ocultos hasta pulsar "Filtrar por:". Se generan automáticamente desde `tools` y `tags` de cada trabajo. Los botones grandes de "Sobre mí" también filtran (su texto debe coincidir exactamente con `tools`).
+- **Enlaces externos**: cada proyecto puede tener botones a Sketchfab, ArtStation, itch.io, redes, etc. (campo `links`).
+- **Galería con imágenes, gifs/webp y video**: cada elemento de `gallery` puede ser una ruta de imagen/gif/webp, o un video de YouTube (`{ type: 'video', url: '...' }`). Al hacer clic en cualquier elemento de la galería se agranda en una ventana (lightbox).
+- **"Este trabajo pertenece a [videojuego]"**: si un trabajo tiene `belongsToGame`, se muestra con la tarjeta del juego enlazado.
+- **"Trabajos relacionados a este."**: si un proyecto tiene `relatedWorks` (arreglo de ids), se muestran esas tarjetas al final de su página.
+- **PDFs**: diplomas enlazados desde Experiencia, o un enlace "Ver PDF" por proyecto (campo `pdf`).
 
 ## Cómo personalizarlo
 
-1. **Datos personales**: edita `index.html` — busca los textos entre corchetes como `[Tu Nombre Completo]` o `[Tu rol profesional]` y reemplázalos.
-2. **Logo**: coloca tu archivo como `assets/images/logo.png`. Aparece automáticamente en el botón fijo de la esquina superior izquierda (que funciona como "volver al inicio" en todas las páginas); mientras no exista el archivo, se ve un marcador de posición.
-3. **Foto**: coloca tu imagen en `assets/images/` y sigue el comentario dentro de `.hero-photo` en `index.html` para reemplazar el marcador por tu `<img>`.
-4. **Proyectos**: todo se controla desde `js/projects-data.js`. Cada objeto del arreglo `PROJECTS` es una tarjeta. Copia uno, cámbiale el `id` (único, sin espacios) y edita sus datos. `category` debe ser `"videojuego"` o `"trabajo"`. Los campos `tools` y `tags` alimentan automáticamente los filtros de "Herramientas" y "Tipos" de la página principal.
-5. **Filtros**: no necesitas configurarlos aparte — se generan solos a partir de los valores usados en `tools` y `tags` de tus proyectos. Los botones de herramientas en "Sobre mí" también filtran: su texto debe coincidir exactamente con el nombre usado en `tools` para que funcionen.
-6. **Imágenes de proyectos**: por defecto, las tarjetas y galerías usan paneles decorativos en vez de fotos, para que el sitio funcione sin necesidad de subir nada primero. Cuando tengas tus imágenes, reemplaza esos paneles por `<img>` dentro de `js/main.js` (tarjetas) y `js/project-detail.js` (galería e imagen principal).
-7. **Experiencia y contacto**: edita directamente esas secciones en `index.html`. Para enlazar un diploma o certificado a un puesto/curso, envuelve su título en una etiqueta `<a>` apuntando a un PDF en `assets/documents/` (hay un ejemplo ya armado en la experiencia estudiantil, y más detalles en `assets/documents/README.md`).
-8. **PDFs**: coloca tu currículum u otros documentos en `assets/documents/`. También puedes agregar un PDF a cualquier proyecto con el campo `pdf` en `js/projects-data.js`.
-9. **Colores**: todos los colores están centralizados como variables al inicio de `css/style.css` (bloque `:root`), así puedes ajustar el tono exacto de verdes y negros desde un solo lugar.
-
-**Nota**: este portafolio no tiene un menú de navegación superior — la única navegación fija es el logo, que siempre lleva de vuelta al inicio.
+1. **Datos personales**: edita `index.html` — nombre, rol, biografía, experiencia y contacto.
+2. **Logo y foto**: colócalos en `assets/images/` (`logo.png` y tu foto de perfil).
+3. **Proyectos**: todo en `js/projects-data.js`. Revisa los comentarios al inicio del archivo — ahí está la lista completa de campos disponibles (`tools`, `tags`, `media`, `gallery`, `pdf`, `links`, `belongsToGame`, `relatedWorks`).
+4. **Relacionar proyectos**: usa el `id` exacto de otro proyecto del mismo arreglo en `belongsToGame` (un solo id) o `relatedWorks` (un arreglo de ids).
+5. **Imágenes y videos de la galería**: reemplaza los paneles decorativos agregando el arreglo `gallery` a un proyecto. Los videos de YouTube se agregan pegando la URL normal (`watch?v=...` o `youtu.be/...`), no hace falta convertirla a link de "embed".
+6. **Colores**: variables al inicio de `css/style.css` (bloque `:root`).
 
 ## Cómo subirlo a GitHub
 
-1. Crea un repositorio nuevo en GitHub (por ejemplo, `portfolio-3d`). No marques la opción de crear un README, ya tienes uno.
-2. Abre una terminal **dentro de esta carpeta** (en VS Code: `Terminal → New Terminal`) y ejecuta:
+1. Crea un repositorio nuevo en GitHub (o usa el que ya tienes). No marques la opción de crear un README si ya tienes este.
+2. Abre una terminal **dentro de esta carpeta** y ejecuta:
    ```bash
    git init
    git add .
-   git commit -m "Primer commit: portafolio 3D"
+   git commit -m "Actualizar portafolio"
    git branch -M main
-   git remote add origin https://github.com/TU-USUARIO/portfolio-3d.git
+   git remote add origin https://github.com/TU-USUARIO/TU-REPO.git
    git push -u origin main
    ```
-3. En GitHub, ve a **Settings → Pages**, elige la rama `main` y la carpeta `/ (root)`, y guarda.
-4. En un par de minutos tu portafolio estará disponible en `https://TU-USUARIO.github.io/portfolio-3d/`.
-
-Cada vez que quieras actualizar el sitio: `git add .`, `git commit -m "mensaje"`, `git push`.
+   (Si el repositorio remoto ya existe con commits previos, usa `git pull origin main --allow-unrelated-histories` antes del push si aparece un error de historiales no relacionados.)
+3. En **Settings → Pages**, elige la rama `main` y la carpeta `/ (root)`.
+4. Tu portafolio estará en `https://TU-USUARIO.github.io/TU-REPO/`.
 
 ## Créditos
 
-Tipografías: [Outfit](https://fonts.google.com/specimen/Outfit) e [Inter](https://fonts.google.com/specimen/Inter), vía Google Fonts.
+Tipografías: [Patrick Hand](https://fonts.google.com/specimen/Patrick+Hand) e [Inter](https://fonts.google.com/specimen/Inter), vía Google Fonts.

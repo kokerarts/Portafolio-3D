@@ -45,3 +45,30 @@ function placeholderIcon(category) {
   const icon = category === 'trabajo' ? ICONS.cube : ICONS.gamepad;
   return `${RINGS_SVG}<span class="icon-fg">${icon}</span>`;
 }
+
+/* Genera el HTML de una tarjeta de proyecto. Se usa tanto para las grillas
+   principales (index.html) como para las tarjetas de "pertenece a" y
+   "relacionados" dentro de la página de detalle de un proyecto. */
+function renderProjectCardHTML(project) {
+  const tagLabel = project.category === 'trabajo' ? 'Trabajo' : 'Videojuego';
+  const mediaContent = project.media
+    ? `<img src="${project.media}" alt="${project.title}" loading="lazy">`
+    : placeholderIcon(project.category);
+
+  return `
+    <a href="project.html?id=${encodeURIComponent(project.id)}" class="project-card" data-tools="${(project.tools || []).join('|')}" data-tags="${(project.tags || []).join('|')}">
+      <div class="card-media">
+        <span class="tag-pill card-tag">${tagLabel}</span>
+        ${mediaContent}
+      </div>
+      <div class="card-reveal">
+        <div class="card-reveal-inner">
+          <div class="inner-pad">
+            <h3 class="card-title">${project.title}</h3>
+            <p class="card-desc">${project.shortDescription}</p>
+          </div>
+        </div>
+      </div>
+    </a>
+  `;
+}

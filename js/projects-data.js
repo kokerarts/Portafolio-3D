@@ -13,10 +13,20 @@
    - galleryCount:      cuántos espacios decorativos mostrar en la galería si no hay imágenes (por defecto 3)
    - media:             (opcional) ruta a una imagen o .gif para la tarjeta y la imagen principal del detalle,
                          ej. "assets/images/juego-01.gif". Si no se define, se muestra un ícono decorativo.
-   - gallery:            (opcional) arreglo de rutas a imágenes o .gif para la galería del detalle,
-                         ej. ["assets/images/juego-01-01.jpg", "assets/images/juego-01-02.gif"]
+   - gallery:            (opcional) arreglo para la galería del detalle. Cada elemento puede ser:
+                         • un texto con la ruta a una imagen, .gif o .webp animado, ej. "assets/images/juego-01-02.gif"
+                         • un objeto de video: { type: 'video', url: 'https://www.youtube.com/watch?v=XXXXXXXXXXX', label: 'Turnaround' }
+                           (el "label" es opcional, se muestra como texto sobre la miniatura del video)
    - pdf:                (opcional) ruta a un PDF relacionado (ej. un breakdown técnico), se
-                         muestra como enlace "Ver PDF" en la página de detalle, ej. "assets/documents/juego-01-breakdown.pdf" */
+                         muestra como enlace "Ver PDF" en la página de detalle, ej. "assets/documents/juego-01-breakdown.pdf"
+   - links:              (opcional) arreglo de enlaces externos (Sketchfab, ArtStation, itch.io, redes, etc.),
+                         se muestran como botones debajo de "Herramientas usadas", ej.
+                         [{ label: 'Ver en Sketchfab', url: 'https://sketchfab.com/...' }, { label: 'Ver en itch.io', url: 'https://...' }]
+   - belongsToGame:      (opcional, para trabajos) el "id" de un videojuego de este mismo arreglo al que pertenece
+                         esta pieza. Muestra "Este trabajo pertenece a [juego]" con la tarjeta del juego.
+   - relatedWorks:       (opcional) arreglo de "id" de otros proyectos relacionados con este (no tienen que ser
+                         mutuos: puedes relacionar A→B sin que B tenga que relacionar de vuelta a A). Se muestran
+                         al final de la página como "Trabajos relacionados a este." */
 
 const PROJECTS = [
   {
@@ -34,9 +44,17 @@ const PROJECTS = [
     tools: ['Unity', 'Blender', 'Unreal Engine'],
     tags: ['Modelado', 'Animacion', 'Rigging', 'Cinematografia'],
     galleryCount: 3,
-    // Ejemplo de cómo agregar tus propias imágenes/gifs (descomenta y ajusta las rutas):
     media: 'assets/images/HellBreezer.PNG',
-    // gallery: ['assets/images/juego-01-01.jpg', 'assets/images/juego-01-02.gif', 'assets/images/juego-01-03.jpg']
+     gallery: [
+       'assets/images/BreezerStraker.PNG',
+       { type: 'video', url: 'https://www.youtube.com/watch?v=Zj4mntDHrgU', label: 'Teaser' },
+       { type: 'video', url: 'https://youtu.be/dW48MGf6F8c', label: 'Gameplay prototipo' }
+     ],
+    relatedWorks: ['P-GolemDePiedra', 'P-CinematicaHellBreezer'],
+    links: [
+      { label: 'Prototipo en Itchio', url: 'https://hell-team.itch.io/hell-breezer' },
+      { label: 'Linktree de TODAS las RRSS', url: 'https://linktr.ee/hell_breezer' }
+    ]
   },
  {
     id: 'V-RustedSteamGear',
@@ -56,6 +74,9 @@ const PROJECTS = [
     // Ejemplo de cómo agregar tus propias imágenes/gifs (descomenta y ajusta las rutas):
     media: 'assets/images/HellBreezer.PNG',
     // gallery: ['assets/images/juego-01-01.jpg', 'assets/images/juego-01-02.gif', 'assets/images/juego-01-03.jpg']
+    links: [
+      { label: 'Ver en itch.io', url: 'https://TU-USUARIO.itch.io/rusted-steam-gear' }
+    ]
   },
   {
     id: 'P-GolemDePiedra',
@@ -71,7 +92,12 @@ const PROJECTS = [
     ],
     tools: ['Blender'],
     tags: ['Modelado', 'Animación'],
-    galleryCount: 3
+    galleryCount: 3,
+    belongsToGame: 'V-HellBreezer',
+    relatedWorks: ['P-CinematicaHellBreezer'],
+    links: [
+      { label: 'Ver en Sketchfab', url: 'https://sketchfab.com/kokerarts' }
+    ]
   },
   {
     id: 'P-CinematicaHellBreezer',
@@ -87,7 +113,9 @@ const PROJECTS = [
     ],
     tools: ['ZBrush', 'Maya', 'Substance Painter'],
     tags: ['Modelado', 'Animación', 'Cinematografía'],
-    galleryCount: 3
+    galleryCount: 3,
+    belongsToGame: 'V-HellBreezer',
+    relatedWorks: ['P-GolemDePiedra']
   },
   {
     id: 'P-Jabalí',
@@ -117,6 +145,10 @@ const PROJECTS = [
     ],
     tools: ['Blender', 'Unity'],
     tags: ['Modelado', 'Animación', 'Rigging'],
-    galleryCount: 3
+    galleryCount: 3,
+    belongsToGame: 'V-RustedSteamGear',
+    links: [
+      { label: 'Ver en ArtStation', url: 'https://www.artstation.com/kokernull7' }
+    ]
   }
 ];
