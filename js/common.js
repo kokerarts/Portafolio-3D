@@ -46,14 +46,25 @@ function placeholderIcon(category) {
   return `${RINGS_SVG}<span class="icon-fg">${icon}</span>`;
 }
 
+/* Detecta si una ruta apunta a un archivo de video local (mp4/webm/mov)
+   en vez de una imagen — se usa en tarjetas, imagen principal y galería. */
+function isVideoFile(src) {
+  return /\.(mp4|webm|mov)(\?.*)?$/i.test(src || '');
+}
+
 /* Genera el HTML de una tarjeta de proyecto. Se usa tanto para las grillas
    principales (index.html) como para las tarjetas de "pertenece a" y
    "relacionados" dentro de la página de detalle de un proyecto. */
 function renderProjectCardHTML(project) {
   const tagLabel = project.category === 'trabajo' ? 'Trabajo' : 'Videojuego';
-  const mediaContent = project.media
-    ? `<img src="${project.media}" alt="${project.title}" loading="lazy">`
-    : placeholderIcon(project.category);
+  let mediaContent;
+  if (project.media && isVideoFile(project.media)) {
+    mediaContent = `<video src="${project.media}" autoplay muted loop playsinline></video>`;
+  } else if (project.media) {
+    mediaContent = `<img src="${project.media}" alt="${project.title}" loading="lazy">`;
+  } else {
+    mediaContent = placeholderIcon(project.category);
+  }
 
   return `
     <a href="project.html?id=${encodeURIComponent(project.id)}" class="project-card" data-tools="${(project.tools || []).join('|')}" data-tags="${(project.tags || []).join('|')}">

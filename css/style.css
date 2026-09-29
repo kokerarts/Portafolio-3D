@@ -333,7 +333,7 @@ section { position: relative; z-index: 1; padding: var(--space-section) 0; scrol
 }
 
 .card-media { position: relative; aspect-ratio: 4 / 3; display: flex; align-items: center; justify-content: center; overflow: hidden; background: var(--black); }
-.card-media img { width: 100%; height: 100%; object-fit: cover; }
+.card-media img, .card-media video { width: 100%; height: 100%; object-fit: cover; }
 .deco-rings-icon { position: absolute; width: 62%; height: 62%; color: var(--green-900); }
 .icon-fg { position: relative; display: flex; color: var(--green-500); transition: transform .4s ease; }
 .icon-fg svg { width: 100%; height: 100%; display: block; }
@@ -426,7 +426,7 @@ section { position: relative; z-index: 1; padding: var(--space-section) 0; scrol
   display: flex; align-items: center; justify-content: center;
   margin-bottom: 44px; overflow: hidden; position: relative;
 }
-.project-media-hero img { width: 100%; height: 100%; object-fit: cover; }
+.project-media-hero img, .project-media-hero video { width: 100%; height: 100%; object-fit: cover; }
 .project-media-hero .icon-fg { width: 17%; height: 17%; }
 
 .project-body { display: grid; grid-template-columns: 1.7fr 1fr; gap: 50px; margin-bottom: 50px; }
@@ -463,10 +463,11 @@ button.gallery-item:hover { transform: translate(-3px, -3px); border-color: var(
 .gallery-item .deco-rings-icon { color: var(--black-panel); }
 
 .gallery-video { position: relative; flex-direction: column; gap: 10px; background-size: cover; background-position: center; }
-.gallery-video::before { content: ""; position: absolute; inset: 0; background: rgba(14, 20, 0, .6); }
-.gallery-play-icon { position: relative; z-index: 1; width: 44px; height: 44px; color: var(--green-400); }
+.gallery-video video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0; }
+.gallery-video::before { content: ""; position: absolute; inset: 0; background: rgba(14, 20, 0, .6); z-index: 1; }
+.gallery-play-icon { position: relative; z-index: 2; width: 44px; height: 44px; color: var(--green-400); }
 .gallery-play-icon svg { width: 100%; height: 100%; display: block; }
-.gallery-video-label { position: relative; z-index: 1; font-size: .8rem; color: var(--text-primary); text-align: center; padding: 0 12px; }
+.gallery-video-label { position: relative; z-index: 2; font-size: .8rem; color: var(--text-primary); text-align: center; padding: 0 12px; }
 
 /* "Este trabajo pertenece a [videojuego]" */
 .belongs-to {
@@ -502,6 +503,7 @@ button.gallery-item:hover { transform: translate(-3px, -3px); border-color: var(
 .lightbox.open { opacity: 1; pointer-events: auto; }
 .lightbox-content { max-width: min(1100px, 92vw); max-height: 86vh; width: 100%; }
 .lightbox-content img { width: 100%; max-height: 86vh; object-fit: contain; display: block; margin-inline: auto; }
+.lightbox-content video { width: 100%; max-height: 86vh; object-fit: contain; display: block; margin-inline: auto; }
 .lightbox-content iframe { width: 100%; aspect-ratio: 16 / 9; border: none; display: block; }
 .lightbox-close {
   position: absolute; top: 24px; right: 24px;

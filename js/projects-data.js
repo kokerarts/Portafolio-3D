@@ -70,12 +70,13 @@ const PROJECTS = [
     ],
     tools: ['Unity', 'Blender', 'Unreal Engine'],
     tags: ['Modelado', 'Animacion', 'Rigging', 'Cinematografia'],
-    galleryCount: 3,
+    galleryCount: 0,
     // Ejemplo de cómo agregar tus propias imágenes/gifs (descomenta y ajusta las rutas):
-    media: 'assets/images/HellBreezer.PNG',
+    media: 'assets/images/RSG.MP4',
     // gallery: ['assets/images/juego-01-01.jpg', 'assets/images/juego-01-02.gif', 'assets/images/juego-01-03.jpg']
+    relatedWorks: ['P-JacobJester'],
     links: [
-      { label: 'Ver en itch.io', url: 'https://TU-USUARIO.itch.io/rusted-steam-gear' }
+      {}
     ]
   },
   {
@@ -96,14 +97,14 @@ const PROJECTS = [
     belongsToGame: 'V-HellBreezer',
     relatedWorks: ['P-CinematicaHellBreezer'],
     links: [
-      { label: 'Ver en Sketchfab', url: 'https://sketchfab.com/kokerarts' }
+      { label: 'Ver en Sketchfab', url: 'https://skfb.ly/pLYYo' }
     ]
   },
   {
     id: 'P-CinematicaHellBreezer',
     category: 'trabajo',
     title: '[Cortometraje de Hell Breezer]',
-    role: '[Cinematografía; Guionista; Director; Animador; ]',
+    role: '[Cinematografía; Guionista; Director; Animador]',
     year: '2025',
     engine: 'Unreal Engine',
     shortDescription: 'Corto animado desde el punto de vista de los enemigos basicos de Hell Breezer.',
@@ -121,7 +122,7 @@ const PROJECTS = [
     id: 'P-Jabalí',
     category: 'trabajo',
     title: '[Jabalí]',
-    role: '[Animador]',
+    role: '[Animador; Riggeador]',
     year: '2024',
     engine: '',
     shortDescription: 'Jabalí realista con animacion.',
@@ -144,6 +145,25 @@ const PROJECTS = [
       'Modelo realizado para el juego Rusted Steam Gear, no posee texturas y tiene animaciones increiblemente basicas, meramente para el prototipo del proyecto.',
     ],
     tools: ['Blender', 'Unity'],
+    tags: ['Modelado', 'Animación', 'Rigging'],
+    galleryCount: 3,
+    belongsToGame: 'V-RustedSteamGear',
+    links: [
+      { label: 'Ver en ArtStation', url: 'https://www.artstation.com/kokernull7' }
+    ]
+  }
+  {
+    id: 'P-Detective',
+    category: 'trabajo',
+    title: '[Detective Chibi]',
+    role: '[Texturizador; Modelador; Riggeador]',
+    year: '2024',
+    engine: 'Unity',
+    shortDescription: 'Modelo de un detective chibi retopologizado.',
+    longDescription: [
+      'Modelo retopolgizado de un detective chibi, el modelo original fue entregado por un profesor a modo de practica de texturizado, el modelo original no tenia UVs, por lo que tuve que retopologizarlo y crearle UVs para poder texturizarlo. Ademas, posee armature para sus 3 poses, y 3 huesos ligados a sus accesorios (Lentes, sombrero y lupa) para moverse junto con el personaje.',
+    ],
+    tools: ['Blender'],
     tags: ['Modelado', 'Animación', 'Rigging'],
     galleryCount: 3,
     belongsToGame: 'V-RustedSteamGear',

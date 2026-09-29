@@ -13,6 +13,9 @@ function renderNotFound(container) {
 }
 
 function renderHeroMedia(project) {
+  if (project.media && isVideoFile(project.media)) {
+    return `<video src="${project.media}" autoplay muted loop playsinline></video>`;
+  }
   if (project.media) {
     return `<img src="${project.media}" alt="${project.title}" loading="lazy">`;
   }
@@ -36,6 +39,16 @@ function toEmbedUrl(url) {
 
 function renderGalleryItem(item) {
   if (typeof item === 'string') {
+    if (isVideoFile(item)) {
+      /* Video local (.mp4, .webm, .mov): miniatura muda con ícono de play,
+         se reproduce con controles y sonido al abrir el lightbox. */
+      return `
+        <button type="button" class="gallery-item gallery-video" data-lightbox-type="mp4" data-lightbox-src="${item}">
+          <video src="${item}" muted playsinline preload="metadata"></video>
+          <span class="gallery-play-icon">${PLAY_SVG}</span>
+        </button>
+      `;
+    }
     /* Imagen, .gif o .webp animado — todas funcionan igual, es solo un <img> */
     return `
       <button type="button" class="gallery-item" data-lightbox-type="image" data-lightbox-src="${item}">
@@ -204,6 +217,8 @@ function setupLightbox() {
     const src = item.dataset.lightboxSrc;
     if (type === 'image') {
       openLightbox(`<img src="${src}" alt="">`);
+    } else if (type === 'mp4') {
+      openLightbox(`<video src="${src}" controls autoplay playsinline></video>`);
     } else if (type === 'video') {
       const sep = src.includes('?') ? '&' : '?';
       openLightbox(`<iframe src="${src}${sep}autoplay=1" allow="autoplay; encrypted-media; fullscreen" allowfullscreen></iframe>`);
