@@ -68,16 +68,12 @@ const PROJECTS = [
       'Rusted Steam Gear es un proyecto de videojuego multijugador online en 3D, donde 4 jugadores deben enfrentarse en un escenario laberintico mirado desde arriba, los 4 jugadores deben eliminarse con sus armas, pero su vision esta increiblemente limitada en un circulo de luz que se bufurca al contacto con una pared.'
       ,'Este proyecto se hizo en un trabajo universitario'
     ],
-    tools: ['Unity', 'Blender', 'Unreal Engine'],
+    tools: ['Unity', 'Blender'],
     tags: ['Modelado', 'Animacion', 'Rigging', 'Cinematografia'],
-    galleryCount: 0,
     // Ejemplo de cómo agregar tus propias imágenes/gifs (descomenta y ajusta las rutas):
     media: 'assets/images/RSG.MP4',
     // gallery: ['assets/images/juego-01-01.jpg', 'assets/images/juego-01-02.gif', 'assets/images/juego-01-03.jpg']
-    relatedWorks: ['P-JacobJester'],
-    links: [
-      {}
-    ]
+    relatedWorks: ['P-JacobJester']
   },
   {
     id: 'P-GolemDePiedra',
@@ -91,9 +87,19 @@ const PROJECTS = [
       'Este golem fue el primer "humanoide" que creé en mi carrera, para ser la primera vez, estoy muy satisfecho con su resultado, lo he llegado a utilizar en varias ocaciones como place holder, y en el corto cinematografico de Hell Breezer.',
       'Su hueso esta compuesto por el rig default de mixamo (a petición del profesor), y sus primeras animaciones son meh. Mas adelante, experimenté con animaciones mas caricaturescas, que escalaban ciertas partes del cuerpo para dar una sensación de "squash and stretch", solamente limitado por los huesos de mixamo.'
     ],
-    tools: ['Blender'],
+    tools: ['Blender', 'Unity', 'Unreal Engine'],
     tags: ['Modelado', 'Animación'],
-    galleryCount: 3,
+    galleryCount: 9,
+    Media: 'assets/images/TA_Golem.MP4',
+    Gallery: ['assets/images/Golem_Idle.mp4', 
+        'assets/images/Golem_Crouch.mp4', 
+        'assets/images/Golem_Susto.mp4',
+        'assets/images/Golem_Jump.mp4',
+        'assets/images/Golem_InAir.mp4',
+        'assets/images/Golem_Landing.mp4',
+        'assets/images/Golem_Walk.mp4',
+        'assets/images/Golem_Toque.mp4',
+        'assets/images/Golem_Receptor.mp4'],
     belongsToGame: 'V-HellBreezer',
     relatedWorks: ['P-CinematicaHellBreezer'],
     links: [
@@ -109,12 +115,18 @@ const PROJECTS = [
     engine: 'Unreal Engine',
     shortDescription: 'Corto animado desde el punto de vista de los enemigos basicos de Hell Breezer.',
     longDescription: [
-      'Describe el encargo: para quién fue, qué pedían y cómo lo resolviste.',
-      'Comenta cualquier restricción creativa o técnica que hiciera especial este proyecto.'
+      'Cinematica de Hell Breezer utilizando el modelo de Golem de piedra como protagonista, el corto fue realizado en Unreal Engine, y se utilizó Blender para modelar y animar los personajes. El corto cuenta la historia de los enemigos basicos encontrandose contra el oso iracundo por primera vez. Por temas de tiempo, el storyboard completo es de 4 minutos aproximadamente, mientras que la cinematica final dura poco mas de un minuto.',
+      'Yo me encargué de guionizar todo el proyecto. El storyboard fue realizado por Benjamin Ramirez; y posteriormente la cinematica completa fue realizada por mi, Benjamín Ramirez, Juan Gomez, Jorge Gutierrez, y Axel Urrutia.',
+      'Mi contribución dentro de la cinematica fue desde el segundo 0:08 hasta 0:26, encargandome del blocking, ciertas animaciones, posicionamiento de camaras y render final. Posteriormente me encargué de finalizar la cinematica completa arreglando pequeños detalles de camara y posicionamiento de personajes, ademas del agregado completo de luces y efectos de sonido.'
     ],
-    tools: ['ZBrush', 'Maya', 'Substance Painter'],
-    tags: ['Modelado', 'Animación', 'Cinematografía'],
+    tools: ['Unreal Engine', 'Blender'],
+    tags: ['Modelado', 'Animación', 'Cinematografía', 'Guionismo'],
     galleryCount: 3,
+    MEDIA: 'assets/images/TA_Cinematica.png',
+    GALLERY: [
+      { type: 'video', url: 'https://www.youtube.com/watch?v=z-nI00oMV_A', label: 'Cinematica' },
+      { type: 'video', url: 'https://www.youtube.com/watch?v=SlW8IjBxfKc&t=5s', label: 'Storyboard' }, 
+        'assets/documents/Cinematica_Guion.pdf'],
     belongsToGame: 'V-HellBreezer',
     relatedWorks: ['P-GolemDePiedra']
   },
@@ -129,9 +141,17 @@ const PROJECTS = [
     longDescription: [
       'Animacion de un jabalí realista, el modelo NO es mio, fue entregado a mi por un profesor a modo de practica de animacion, desconozco el origen del modelo, pero el esqueleto y las animaciones fueron hechas por mi.',
     ],
+    GalleryCount: 3,
+    Media: 'assets/images/TA_Jabali.mp4',
+    Gallery: ['assets/images/Jabali_Idle.mp4', 
+        'assets/images/Jabali_Walk.mp4', 
+        'assets/images/Jabali_Sniffing.mp4'],
     tools: ['Blender',],
     tags: ['Animación', 'Rigging'],
-    galleryCount: 3
+    links: [
+      { label: 'Ver en Sketchfab', url: 'https://skfb.ly/pMowy' }
+    ]
+
   },
   {
     id: 'P-JacobJester',
@@ -146,12 +166,12 @@ const PROJECTS = [
     ],
     tools: ['Blender', 'Unity'],
     tags: ['Modelado', 'Animación', 'Rigging'],
-    galleryCount: 3,
     belongsToGame: 'V-RustedSteamGear',
+    Media: 'assets/images/TA_JacobJester.mp4',
     links: [
-      { label: 'Ver en ArtStation', url: 'https://www.artstation.com/kokernull7' }
+      { label: 'Ver en Sketchfab', url: 'https://skfb.ly/pLYYM' }
     ]
-  }
+  },
   {
     id: 'P-Detective',
     category: 'trabajo',
@@ -166,9 +186,12 @@ const PROJECTS = [
     tools: ['Blender'],
     tags: ['Modelado', 'Animación', 'Rigging'],
     galleryCount: 3,
-    belongsToGame: 'V-RustedSteamGear',
+    media: 'assets/images/TA_Detectives.mp4',
+      Gallery: ['assets/images/Detective1.PNG', 
+        'assets/images/Detective2.PNG', 
+        'assets/images/Detective3.PNG'],
     links: [
-      { label: 'Ver en ArtStation', url: 'https://www.artstation.com/kokernull7' }
+      { label: 'Ver en Sketchfab', url: 'https://skfb.ly/pOuqH' }
     ]
   }
 ];
