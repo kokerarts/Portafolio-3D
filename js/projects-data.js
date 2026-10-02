@@ -193,5 +193,49 @@ const PROJECTS = [
     links: [
       { label: 'Ver en Sketchfab', url: 'https://skfb.ly/pOuqH' }
     ]
-  }
+  },
+  {
+    id: 'P-Ichiraku',
+    category: 'trabajo',
+    title: '[Ramen de Ichiraku]',
+    role: '[Texturizador; Modelador]',
+    year: '2024',
+    engine: '',
+    shortDescription: 'Diorama de un puesto de ramen inspirado en el anime Naruto.',
+    longDescription: [
+      'Diorama de Ichiraku ramen, basandome en varias capturas del anime Naruto para su creación, Los modelos los hice yo, ciertas texturas fueron pintadas por mi; y las texturas de suelo, paredes, techo, y carteles fueron sacadas de internet y modificadas levemente (Imagenes de uso gratuito).',
+    ],
+    tools: ['Blender'],
+    tags: ['Modelado', 'Texturizado'],
+    galleryCount: 3,
+    media: 'assets/images/TA_Ichiraku.mp4',
+      Gallery: ['assets/images/Ichiraku_Cocina.PNG', 
+        'assets/images/Ichiraku_Fideos.PNG', 
+        'assets/images/Ichiraku_Tazones.PNG'],
+    links: [
+      { label: 'Ver en Sketchfab', url: 'https://skfb.ly/pOuqH' }
+    ]
+  },
+  {
+    id: 'P-NarutoRoom',
+    category: 'trabajo',
+    title: '[Habitación de Naruto]',
+    role: '[Texturizador; Modelador]',
+    year: '2023',
+    engine: '',
+    shortDescription: 'Diorama de la habitación de Naruto Uzumaki, basado en el anime del mismo nombre.',
+    longDescription: [
+      'Diorama de la habitación de Naruto Uzumaki, basandome en varias capturas del anime Naruto para su creación, Los modelos y las texturas las hice yo.',
+    ],
+    tools: ['Blender'],
+    tags: ['Modelado', 'Texturizado'],
+    galleryCount: 3,
+    media: 'assets/images/TA_Ichiraku.mp4',
+      Gallery: ['assets/images/Ichiraku_Cocina.PNG', 
+        'assets/images/Ichiraku_Fideos.PNG', 
+        'assets/images/Ichiraku_Tazones.PNG'],
+    links: [
+      { label: 'Ver en Sketchfab', url: 'https://skfb.ly/pOuqH' }
+    ]
+  },
 ];
