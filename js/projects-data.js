@@ -90,8 +90,8 @@ const PROJECTS = [
     tools: ['Blender', 'Unity', 'Unreal Engine'],
     tags: ['Modelado', 'Animación'],
     galleryCount: 9,
-    Media: 'assets/images/TA_Golem.MP4',
-    Gallery: ['assets/images/Golem_Idle.mp4', 
+    media: 'assets/images/TA_Golem.MP4',
+    gallery: ['assets/images/Golem_Idle.mp4', 
         'assets/images/Golem_Crouch.mp4', 
         'assets/images/Golem_Susto.mp4',
         'assets/images/Golem_Jump.mp4',
@@ -122,8 +122,8 @@ const PROJECTS = [
     tools: ['Unreal Engine', 'Blender'],
     tags: ['Modelado', 'Animación', 'Cinematografía', 'Guionismo'],
     galleryCount: 3,
-    MEDIA: 'assets/images/TA_Cinematica.png',
-    GALLERY: [
+    media: 'assets/images/Cinematica.png',
+    gallery: [
       { type: 'video', url: 'https://www.youtube.com/watch?v=z-nI00oMV_A', label: 'Cinematica' },
       { type: 'video', url: 'https://www.youtube.com/watch?v=SlW8IjBxfKc&t=5s', label: 'Storyboard' }, 
         'assets/documents/Cinematica_Guion.pdf'],
@@ -141,9 +141,9 @@ const PROJECTS = [
     longDescription: [
       'Animacion de un jabalí realista, el modelo NO es mio, fue entregado a mi por un profesor a modo de practica de animacion, desconozco el origen del modelo, pero el esqueleto y las animaciones fueron hechas por mi.',
     ],
-    GalleryCount: 3,
-    Media: 'assets/images/TA_Jabali.mp4',
-    Gallery: ['assets/images/Jabali_Idle.mp4', 
+    galleryCount: 3,
+    media: 'assets/images/TA_Jabali.mp4',
+    gallery: ['assets/images/Jabali_Idle.mp4', 
         'assets/images/Jabali_Walk.mp4', 
         'assets/images/Jabali_Sniffing.mp4'],
     tools: ['Blender',],
@@ -167,7 +167,8 @@ const PROJECTS = [
     tools: ['Blender', 'Unity'],
     tags: ['Modelado', 'Animación', 'Rigging'],
     belongsToGame: 'V-RustedSteamGear',
-    Media: 'assets/images/TA_JacobJester.mp4',
+    media: 'assets/images/TA_JacobJester.mp4',
+    gallerycount: 0,
     links: [
       { label: 'Ver en Sketchfab', url: 'https://skfb.ly/pLYYM' }
     ]
@@ -187,7 +188,7 @@ const PROJECTS = [
     tags: ['Modelado', 'Animación', 'Rigging'],
     galleryCount: 3,
     media: 'assets/images/TA_Detectives.mp4',
-      Gallery: ['assets/images/Detective1.PNG', 
+      gallery: ['assets/images/Detective1.PNG', 
         'assets/images/Detective2.PNG', 
         'assets/images/Detective3.PNG'],
     links: [
@@ -209,11 +210,11 @@ const PROJECTS = [
     tags: ['Modelado', 'Texturizado'],
     galleryCount: 3,
     media: 'assets/images/TA_Ichiraku.mp4',
-      Gallery: ['assets/images/Ichiraku_Cocina.PNG', 
+      gallery: ['assets/images/Ichiraku_Cocina.PNG', 
         'assets/images/Ichiraku_Fideos.PNG', 
         'assets/images/Ichiraku_Tazones.PNG'],
     links: [
-      { label: 'Ver en Sketchfab', url: 'https://skfb.ly/pOuqH' }
+      { label: 'Ver en Sketchfab', url: 'https://skfb.ly/pOytD' }
     ]
   },
   {
@@ -226,16 +227,54 @@ const PROJECTS = [
     shortDescription: 'Diorama de la habitación de Naruto Uzumaki, basado en el anime del mismo nombre.',
     longDescription: [
       'Diorama de la habitación de Naruto Uzumaki, basandome en varias capturas del anime Naruto para su creación, Los modelos y las texturas las hice yo.',
+      'El archivo Blend original esta perdido, por suerte tengo GTLF en Sketchfab.'
     ],
     tools: ['Blender'],
     tags: ['Modelado', 'Texturizado'],
-    galleryCount: 3,
-    media: 'assets/images/TA_Ichiraku.mp4',
-      Gallery: ['assets/images/Ichiraku_Cocina.PNG', 
-        'assets/images/Ichiraku_Fideos.PNG', 
-        'assets/images/Ichiraku_Tazones.PNG'],
+    galleryCount: 0,
+    media: 'assets/images/TA_NarutoRoom.mp4',
     links: [
-      { label: 'Ver en Sketchfab', url: 'https://skfb.ly/pOuqH' }
+      { label: 'Ver en Sketchfab', url: 'https://skfb.ly/psz8w' }
+    ]
+  },
+  {
+    id: 'P-Caballero',
+    category: 'trabajo',
+    title: '[Caballero Low Poly]',
+    role: '[Riggeador; Modelador]',
+    year: '2026',
+    engine: '',
+    shortDescription: 'Modelo de un caballero en estilo low poly para un videojuego VR',
+    longDescription: [
+      'Modelo de un caballero en estilo low poly para ser usado en un videojuego VR con estetica Vaporwave recordando a Tron o juego de cartas de Hora de Aventura.',
+      'El modelo fue hecho en Blender, sin texturas, y con un rig simple de prueba.'
+    ],
+    tools: ['Blender'],
+    tags: ['Modelado', 'Rigging'],
+    galleryCount: 0,
+    media: 'assets/images/TA_CaballeroLP.mp4',
+    links: [
+      { label: 'Ver en Sketchfab', url: 'https://skfb.ly/pOysI' }
     ]
   },
 ];
+
+/* Red de seguridad: JavaScript distingue mayúsculas de minúsculas en los
+   nombres de campo. Si por error escribes "Media", "GALLERY", etc. en vez
+   de "media", "gallery", esto los corrige automáticamente para que el
+   proyecto funcione igual (aunque lo más prolijo es escribirlos siempre
+   en minúsculas, como en los ejemplos de arriba). */
+(function normalizeProjectFieldCasing() {
+  const camposValidos = ['media', 'gallery', 'galleryCount', 'pdf', 'links', 'belongsToGame', 'relatedWorks'];
+  PROJECTS.forEach((proyecto) => {
+    camposValidos.forEach((campoCorrecto) => {
+      if (proyecto[campoCorrecto] !== undefined) return;
+      const claveEncontrada = Object.keys(proyecto).find(
+        (clave) => clave.toLowerCase() === campoCorrecto.toLowerCase()
+      );
+      if (claveEncontrada) {
+        proyecto[campoCorrecto] = proyecto[claveEncontrada];
+      }
+    });
+  });
+})();

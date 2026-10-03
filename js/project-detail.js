@@ -1,6 +1,7 @@
 /* project-detail.js — lógica específica de project.html */
 
 const PLAY_SVG = '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>';
+const PDF_SVG = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3v5h5"/><path d="M17 21H7a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h7l5 5v11a2 2 0 0 1-2 2z"/></svg>';
 
 function renderNotFound(container) {
   container.innerHTML = `
@@ -39,6 +40,16 @@ function toEmbedUrl(url) {
 
 function renderGalleryItem(item) {
   if (typeof item === 'string') {
+    if (isPdfFile(item)) {
+      /* Un PDF (ej. un guion) dentro de la galería: se abre directo en
+         una pestaña nueva, no tiene sentido "agrandarlo" en el lightbox. */
+      return `
+        <a href="${item}" target="_blank" rel="noopener" class="gallery-item gallery-pdf">
+          <span class="gallery-pdf-icon">${PDF_SVG}</span>
+          <span class="gallery-pdf-label">Ver PDF</span>
+        </a>
+      `;
+    }
     if (isVideoFile(item)) {
       /* Video local (.mp4, .webm, .mov): miniatura muda con ícono de play,
          se reproduce con controles y sonido al abrir el lightbox. */
@@ -75,7 +86,7 @@ function renderGallery(project) {
     return project.gallery.map(renderGalleryItem).join('');
   }
   /* Sin galería definida: paneles decorativos de relleno */
-  const count = project.galleryCount || 3;
+  const count = typeof project.galleryCount === 'number' ? project.galleryCount : 3;
   let html = '';
   for (let i = 0; i < count; i++) {
     html += `<div class="gallery-item">${placeholderIcon(project.category)}</div>`;

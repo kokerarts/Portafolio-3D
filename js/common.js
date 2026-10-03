@@ -52,6 +52,11 @@ function isVideoFile(src) {
   return /\.(mp4|webm|mov)(\?.*)?$/i.test(src || '');
 }
 
+/* Detecta si una ruta de la galería apunta a un PDF (ej. un guion) */
+function isPdfFile(src) {
+  return /\.pdf(\?.*)?$/i.test(src || '');
+}
+
 /* Genera el HTML de una tarjeta de proyecto. Se usa tanto para las grillas
    principales (index.html) como para las tarjetas de "pertenece a" y
    "relacionados" dentro de la página de detalle de un proyecto. */
